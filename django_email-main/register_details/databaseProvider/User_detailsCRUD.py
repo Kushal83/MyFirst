@@ -6,7 +6,7 @@ def updatedetails(data):
     
     try:
         updatedata = [data["Firstname"],data["Lastname"],data["Address"],data["City"],data["State"],data["Zip"],data["Company"],data["CompanyAddress"],data["Phoneno"],data["uid"]]
-        cursor.execute('UPDATE public."Register_details" SET "Firstname"=%s, "Lastname"=%s, "Address"%s, "City"=%s, "State"=%s, "Zip"=%s, "Company"=%s, "CompanyAddress"=%s, "Phoneno"=%s WHERE public."Register_details"."uid" =%s;',updatedata)
+        cursor.execute('UPDATE public."Register_details" SET "Firstname"=%s, "Lastname"=%s, "Address"=%s, "City"=%s, "State"=%s, "Zip"=%s, "Company"=%s, "CompanyAddress"=%s, "Phoneno"=%s WHERE public."Register_details"."uid" =%s;',updatedata)
 
         
         connection.commit()
