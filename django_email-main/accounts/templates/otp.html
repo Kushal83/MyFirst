@@ -1,0 +1,40 @@
+{% extends "base.html"%}
+
+    {% block content %}
+
+
+    <div class="global-container">
+        <div class="card login-form">
+        <div class="card-body">
+            <h3 class="card-title text-center">OTP</h3>
+            {% if messages %}
+
+            {% for message in messages %}
+            <div class="alert alert-info">
+                {{ message }}
+            </div>
+            {% endfor %}
+      
+        {% endif %}
+            <div class="card-text">
+                <form method="post" >
+                    {% csrf_token %}
+                   <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" name="email" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputotp">OTP</label>
+                        
+                        <input type="text" name="otp" class="form-control form-control-sm" id="exampleInputotp">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">Verify</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+
+    {% endblock %}
